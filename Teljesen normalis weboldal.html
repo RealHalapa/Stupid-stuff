@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>egy teljesen normalis weboldal</title>
+</head>
+<body>
+    <h1>udv a teljesen normalis weboldalon</h1>
+    <h2>Az IP cimed:</h2>
+    <h3 id="ip-address"></h3>
+    <p>kosz az ip cimedet</p>
+
+    <script>
+        fetch('https://api.ipify.org/?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("ip-address").innerText = data.ip;
+            })
+            .catch(error => {
+                console.log("Hiba történt: ", error);
+            });
+    </script>
+</body>
+</html>
